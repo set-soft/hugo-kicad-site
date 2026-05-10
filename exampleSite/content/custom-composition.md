@@ -13,6 +13,7 @@ Instead of using a fixed layout type like `board` or `assembly`, you can insert 
 {{</* call-partial "kicanvas.html" */>}}
 {{</* call-partial "gallery.html" */>}}
 {{</* call-partial "ibom.html" */>}}
+{{</* call-partial "assembly.html" */>}}
 ```
 
 This lets you mix and match components freely, add your own content between them, and control the order.
@@ -42,4 +43,4 @@ This lets you mix and match components freely, add your own content between them
 - **Full control** over page structure and content order
 - **No Go/HTML knowledge** required — pure Markdown
 - **Mix components** with your own prose, tables, images, etc.
-- Works with any partial: `gallery.html`, `kicanvas.html`, `ibom.html`
+- Works with any partial: `gallery.html`, `kicanvas.html`, `ibom.html`, `assembly.html`
