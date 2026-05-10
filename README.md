@@ -96,11 +96,11 @@ Built-in page types (set via `type` in front matter):
 | `board` | KiCanvas schematic/PCB viewer + 3D render gallery + custom content |
 | `release` | Combined release notes, downloads, and schematic/PCB diffs |
 | `assembly` | Interactive 3D model viewer (STEP/GLB via [Online3DViewer](https://github.com/kovacsv/Online3DViewer)) |
-| `kicanvas` | Embedded KiCanvas schematic/PCB viewer (standalone, use `board` instead) |
-| `gallery` | 3D render image grid (standalone, use `board` instead) |
-| `downloads` | Auto-generated download list (standalone, use `release` instead) |
-| `changes` | Release notes + diffs (standalone, use `release` instead) |
-| *(default)* | Standard markdown page |
+| `kicanvas` | *(deprecated)* Use `board` or `call-partial` shortcode instead |
+| `gallery` | *(deprecated)* Use `board` or `call-partial` shortcode instead |
+| `downloads` | *(deprecated)* Use `release` or `call-partial` shortcode instead |
+| `changes` | *(deprecated)* Use `release` instead |
+| *(default)* | Standard markdown page — combine with `call-partial` shortcodes for custom layouts |
 
 Custom pages are plain markdown — add as many as you need.
 
