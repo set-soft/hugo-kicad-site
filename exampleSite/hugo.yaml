@@ -43,6 +43,9 @@ menu:
     - name: Design Notes
       pageRef: /design-notes/
       weight: 50
+    - name: Custom Composition
+      pageRef: /custom-composition/
+      weight: 55
     - name: GitHub
       url: https://github.com/laenzlinger/hugo-kicad-site
       params:

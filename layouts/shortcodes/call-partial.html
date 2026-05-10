@@ -1,0 +1,6 @@
+{{- $partialName := .Get 0 -}}
+{{- if $partialName -}}
+  {{- partial $partialName .Page -}}
+{{- else -}}
+  {{- errorf "The call-partial shortcode requires a partial name, e.g., {{< call-partial \"gallery.html\" >}}" -}}
+{{- end -}}

@@ -20,6 +20,7 @@ Works best with [KiBot](https://github.com/INTI-CMNB/KiBot) for automated asset 
 - Dark/light mode with automatic system detection
 - Table of contents on every page
 - Extensible with custom markdown pages (assembly guides, design notes, etc.)
+- Composable pages via `call-partial` shortcode (embed viewers in any Markdown page)
 - Fully configurable via `hugo.yaml` params
 - Reusable GitHub Actions workflow for CI/CD
 
@@ -102,6 +103,26 @@ Built-in page types (set via `type` in front matter):
 | *(default)* | Standard markdown page |
 
 Custom pages are plain markdown — add as many as you need.
+
+### Shortcodes
+
+The `call-partial` shortcode lets you embed theme components directly in Markdown — no custom templates needed:
+
+```markdown
+{{< call-partial "kicanvas.html" >}}
+{{< call-partial "gallery.html" >}}
+{{< call-partial "ibom.html" >}}
+```
+
+Available partials:
+
+| Partial | Description |
+|---------|-------------|
+| `kicanvas.html` | Interactive KiCanvas schematic/PCB viewer |
+| `gallery.html` | 3D render image grid with lightbox |
+| `ibom.html` | Interactive BOM viewer with dark mode sync |
+
+This allows fully custom page composition in pure Markdown. See the [Custom Composition](https://laenzlinger.github.io/hugo-kicad-site/latest/custom-composition/) demo page for a live example.
 
 ### 5. Set up CI
 
