@@ -9,8 +9,26 @@
     function syncTheme() {
       try {
         var dark = document.documentElement.classList.contains('dark');
-        var body = iframe.contentDocument.querySelector('.topmostdiv');
+        var doc = iframe.contentDocument;
+        var body = doc.querySelector('.topmostdiv');
         if (body) body.classList.toggle('dark', dark);
+        // Inject style overrides to align with site colors
+        var id = 'kicad-site-theme';
+        var existing = doc.getElementById(id);
+        if (!existing) {
+          var style = doc.createElement('style');
+          style.id = id;
+          style.textContent =
+            '.dark .topmostdiv { background-color: #1e1e1e; }' +
+            '.dark .bom th { background-color: #2a2a2a; }' +
+            '.dark .bom td, .dark .bom tr:nth-child(even) { background-color: transparent; }' +
+            '.dark .bom tr:nth-child(even) { background-color: #252525; }' +
+            '.dark .gutter { background-color: #374151; }' +
+            '.dark .searchbox { background-color: #1e1e1e; border-color: #374151; color: #e5e7eb; }' +
+            '.dark .menu-content { background-color: #1e1e1e; }' +
+            '.dark a { color: #60a5fa; }';
+          doc.head.appendChild(style);
+        }
       } catch(e) {}
     }
     iframe.addEventListener('load', syncTheme);
