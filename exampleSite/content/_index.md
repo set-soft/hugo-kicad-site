@@ -3,7 +3,7 @@ title: Overview
 weight: 10
 ---
 
-This is a demo site for the [hugo-kicad-site](https://github.com/laenzlinger/hugo-kicad-site) theme — a reusable Hugo theme for KiCad hardware project documentation.
+This is a demo site for the [hugo-kicad-site](https://github.com/laenzlinger/hugo-kicad-site) theme — a reusable Hugo theme for KiCad hardware project documentation. Built on top of [Hextra](https://github.com/imfing/hextra).
 
 It uses the **Arduino Uno Shield** template from KiCad as example content. All assets (3D renders, BOM, interactive BOM, schematics) are generated automatically by [KiBot](https://github.com/INTI-CMNB/KiBot) during CI.
 
@@ -12,8 +12,22 @@ It uses the **Arduino Uno Shield** template from KiCad as example content. All a
 - **Board page** — embedded [KiCanvas](https://kicanvas.org/) viewer for interactive schematic/PCB browsing, 3D render gallery, interactive BOM
 - **Release page** — combined downloads, schematic/PCB diffs, and GitHub release link
 - **Assembly page** — interactive 3D model viewer (STEP/GLB via [Online3DViewer](https://github.com/kovacsv/Online3DViewer))
-- **Custom pages** — plain markdown for assembly guides, design notes, etc.
+- **Custom composition** — embed any viewer in plain Markdown via the `call-partial` shortcode
 - **Version picker** — switch between tagged releases (Read the Docs style)
+- **Dark/light mode** — automatic system detection, synced across all viewers
+
+## Composable pages
+
+Instead of fixed page types, you can compose pages freely using shortcodes:
+
+```markdown
+{{</* call-partial "kicanvas.html" */>}}
+{{</* call-partial "gallery.html" */>}}
+{{</* call-partial "ibom.html" */>}}
+{{</* call-partial "assembly.html" */>}}
+```
+
+See the [Custom Composition](/hugo-kicad-site/latest/custom-composition/) page for a live example.
 
 ## KiBot outputs
 
